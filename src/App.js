@@ -21,11 +21,11 @@ function App() {
         ? data.map((hero, idx) => {
             return (
               <div
-                className="grid items-start max-w-md m-5 p-5 border-solid border-2 border-violet-600"
+                className="overflow-auto grid items-start max-w-md m-5 p-5 border-solid border-2 border-gray-600 bg-gray-300 shadow-2xl rounded"
                 key={idx}
               >
                 <img
-                  className="max-w-md"
+                  className="max-w-md mr-5"
                   src={hero.attributes.image.data.attributes.name}
                   alt="Image of dota hero"
                 />
@@ -38,6 +38,17 @@ function App() {
                   <li>Difficulty: {hero.attributes.difficulty}</li>
                 </ul>
                 <p className="max-w-md">{hero.attributes.description}</p>
+                <div>
+                  <h3 className="text-lg font-semibold mt-5">Build</h3>
+                  <ul>
+                    <li>{hero.attributes.dota_build.data.attributes.boots}</li>
+                    <li>{hero.attributes.dota_build.data.attributes.core1}</li>
+                    <li>{hero.attributes.dota_build.data.attributes.core2}</li>
+                    <li>{hero.attributes.dota_build.data.attributes.slot4}</li>
+                    <li>{hero.attributes.dota_build.data.attributes.slot5}</li>
+                    <li>{hero.attributes.dota_build.data.attributes.slot6}</li>
+                  </ul>
+                </div>
               </div>
             );
           })
