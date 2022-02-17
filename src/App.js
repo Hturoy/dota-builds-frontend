@@ -17,23 +17,27 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello1!</h1>
-
       {data.length > 0
         ? data.map((hero, idx) => {
             return (
-              <div className="flex" key={idx}>
+              <div
+                className="grid items-start max-w-md m-5 p-5 border-solid border-2 border-violet-600"
+                key={idx}
+              >
                 <img
+                  className="max-w-md"
                   src={hero.attributes.image.data.attributes.name}
                   alt="Image of dota hero"
                 />
-                <h2>{hero.attributes.name}</h2>
-                <ul>
-                  <li>{hero.attributes.role}</li>
-                  <li>{hero.attributes.type}</li>
-                  <li>{hero.attributes.difficulty}</li>
+                <h2 className="text-lg font-semibold">
+                  {hero.attributes.name}
+                </h2>
+                <ul className="mb-5 mt-5">
+                  <li>Role: {hero.attributes.role}</li>
+                  <li>Type: {hero.attributes.type}</li>
+                  <li>Difficulty: {hero.attributes.difficulty}</li>
                 </ul>
-                <p>{hero.attributes.description}</p>
+                <p className="max-w-md">{hero.attributes.description}</p>
               </div>
             );
           })
