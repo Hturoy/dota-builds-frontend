@@ -11,10 +11,6 @@ function App() {
       .then((response) => setData(response.data.data));
   });
 
-  //hero.attributes.name
-  //hero.attributes.dota_build.data.attributes.core1
-  //hero.attributes.image.data.attributes.name
-
   return (
     <>
       {data.length > 0
