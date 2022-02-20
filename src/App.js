@@ -23,7 +23,7 @@ function App() {
                 <img
                   className="max-w-md mr-5 border-solid border-2 border-gray-600 rounded shadow-xl"
                   src={hero.attributes.image.data.attributes.name}
-                  alt="Image of dota hero"
+                  alt={hero.attributes.name}
                 />
                 <h2 className="text-lg font-semibold">
                   {hero.attributes.name}
